@@ -1,21 +1,30 @@
 <template>
-    <div :class="wrapper">
+    <button :class="wrapper" @click="handleQuestionChoice">
         <span>{{ answer.id }}</span>
-        <span>{{ answer.content }}</span>
-    </div>
+        <span v-html="answer.content" />
+    </button>
 </template>
 
 <script setup lang="ts">
-    import { ref, defineProps } from 'vue';
+    import { ref, defineProps, defineEmits } from 'vue';
     import type { Answer } from './Answer.ts';
 
     interface Props {
         answer: Answer
     }
-
+    
     const { answer } = defineProps<Props>();
+    const emit = defineEmits(["questionChoice"])
 
-    const wrapper = ref('border border-sky-500 ');
+    function handleQuestionChoice() {
+        emit('questionChoice', answer.id);
+    }
+
+    const wrapper = `w-full p-2
+        border border-sky-500 rounded 
+        hover:bg-sky-500/2 focus:bg-sky-500/10
+        text-left
+        transition cursor-pointer`;
 </script>
 
 <style scoped>
