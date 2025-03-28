@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "dev": "bun x --bun vite",
+    "build": "bun x --bun vue-tsc -b && bun x --bun vite build",
+    "preview": "bun x --bun vite preview"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.15",
