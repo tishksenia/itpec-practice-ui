@@ -1,9 +1,8 @@
 <template>
     <div :class="wrapper">
-        <h1 class="text-4xl">{{ question.title }}</h1>
         <span v-html="question.content" />
         <div :class="answersWrapper">
-            <div v-for="answer in question.answers">
+            <div v-for="answer in question.answers" :key="answer.id">
                 <Answer :answer="answer" @question-choice="handleQuestionChoice" />
             </div>
         </div>
@@ -11,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, defineProps, defineEmits, emit } from 'vue';
+    import { defineProps, defineEmits } from 'vue';
     import type { Question } from './Question.ts';
     import Answer from '../Answer/Answer.vue';
     interface Props {
