@@ -1,6 +1,5 @@
 <template>
     <button :class="wrapper" :id="`answer_${answer.id}`" @click="handleQuestionChoice">
-        <span>{{ answer.id }}</span>
         <span v-html="answer.content" />
     </button>
 </template>

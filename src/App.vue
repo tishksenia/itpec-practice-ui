@@ -1,26 +1,104 @@
 <script setup lang="ts">
-import Question from "./entities/Question/Question.vue";
+import Test from "./entities/Test/Test.vue";
 
-const handleAnswer = (questionId: string, isCorrect: boolean) => {
-}
-
+const mockQuestions = [
+    {
+        answers: [
+          {
+            content: "Answer 1",
+            id: "1",
+          },
+          {
+            content: "Answer 2",
+            id: "2",
+          },
+          {
+            content: "Answer 3",
+            id: "3",
+          },
+          {
+            content: "Answer 4",
+            id: "4",
+          },
+        ],
+        content: "First Question",
+        correctAnswer: "1",
+        id: "test-id-1",
+      },
+      {
+        answers: [
+          {
+            content: "Answer 1",
+            id: "1",
+          },
+          {
+            content: "Answer 2",
+            id: "2",
+          },
+          {
+            content: "Answer 3",
+            id: "3",
+          },
+          {
+            content: "Answer 4",
+            id: "4",
+          },
+        ],
+        content: "2nd",
+        correctAnswer: "1",
+        id: "test-id-2",
+      },
+      {
+        answers: [
+          {
+            content: "Answer 1",
+            id: "1",
+          },
+          {
+            content: "Answer 2",
+            id: "2",
+          },
+          {
+            content: "Answer 3",
+            id: "3",
+          },
+          {
+            content: "Answer 4",
+            id: "4",
+          },
+        ],
+        content: "3rd",
+        correctAnswer: "1",
+        id: "test-id-3",
+      },
+      {
+        answers: [
+          {
+            content: "Answer 1",
+            id: "1",
+          },
+          {
+            content: "Answer 2",
+            id: "2",
+          },
+          {
+            content: "Answer 3",
+            id: "3",
+          },
+          {
+            content: "Answer 4",
+            id: "4",
+          },
+        ],
+        content: "Last",
+        correctAnswer: "1",
+        id: "test-id-4",
+      },
+];
 </script>
 
 <template>
-  <Question
-    :question="{
-      content: `Q. When three apples are removed at random from a box that contains four green apples and eight red apples, what is the probability that the first two apples are green and the third (or last) apple is red? Here, once an apple is removed, it is not put back into the box. `,
-      answers: [
-        { id: '1', content: '1/18' },
-        { id: '2', content: '4/55' },
-        { id: '3', content: '8/121' },
-        { id: '2', content: '2/27' },
-      ],
-      correctAnswer: '1',
-      id: 'test-id'
-    }"
-    @answer='handleAnswer'
-  />
+  <Test :questions="mockQuestions" />
 </template>
 
 <style scoped></style>

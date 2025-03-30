@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import Question from "./Question.vue";
+import QuestionCard from "./QuestionCard.vue";
 
 const mockQuestion = {
   answers: [
@@ -25,9 +25,9 @@ const mockQuestion = {
   id: "test-id",
 };
 
-describe("entities/Question", () => {
+describe("entities/QuestionCard", () => {
   test("Should render the question content and its answers", () => {
-    const wrapper = mount(Question, {
+    const wrapper = mount(QuestionCard, {
       props: {
         question: mockQuestion,
       },
@@ -38,7 +38,7 @@ describe("entities/Question", () => {
   });
 
   test("When selecting correct answer, should call the callback with correct question id and isCorrect = true", () => {
-    const wrapper = mount(Question, {
+    const wrapper = mount(QuestionCard, {
       props: {
         question: mockQuestion,
       },
@@ -53,7 +53,7 @@ describe("entities/Question", () => {
   });
 
   test("When selecting a wrong answer, should call the callback with correct question id and isCorrect = false", () => {
-    const wrapper = mount(Question, {
+    const wrapper = mount(QuestionCard, {
       props: {
         question: mockQuestion,
       },
