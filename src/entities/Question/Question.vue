@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-    import { defineProps, defineEmits } from 'vue';
+    import { defineProps } from 'vue';
     import type { Question } from './Question.ts';
     import Answer from '../Answer/Answer.vue';
     interface Props {

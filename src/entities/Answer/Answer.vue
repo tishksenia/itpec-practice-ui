@@ -1,12 +1,12 @@
 <template>
-    <button :class="wrapper" @click="handleQuestionChoice">
+    <button :class="wrapper" :id="`answer_${answer.id}`" @click="handleQuestionChoice">
         <span>{{ answer.id }}</span>
         <span v-html="answer.content" />
     </button>
 </template>
 
 <script setup lang="ts">
-    import { defineProps, defineEmits } from 'vue';
+    import { defineProps } from 'vue';
     import type { Answer } from './Answer.ts';
 
     interface Props {

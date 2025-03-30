@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/entities/answer/answer.ts","./src/entities/question/question.spec.ts","./src/entities/question/question.ts"],"errors":true,"version":"5.8.2"}

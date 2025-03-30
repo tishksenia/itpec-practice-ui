@@ -7,7 +7,8 @@
     "dev": "bun x --bun vite",
     "build": "bun x --bun vue-tsc -b && bun x --bun vite build",
     "preview": "bun x --bun vite preview",
-    "test": "bun x --bun vitest",
+    "test": "npx vitest run",
+    "test:watch": "npx vitest watch",
     "lint": "bun x --bun eslint src"
   },
   "dependencies": {
