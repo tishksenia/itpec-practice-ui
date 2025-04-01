@@ -1,6 +1,8 @@
 <template>
   <div :class="navigationWrapper">
-    <div :class="counterWrapper">{{ position + 1 }} / {{ questions.length }}</div>
+    <div :class="counterWrapper">
+      {{ position + 1 }} / {{ questions.length }}
+    </div>
     <div :class="buttonsWrapper">
       <button
         @click="handleNavigation('previous')"
@@ -10,6 +12,7 @@
       >
         <img :src="previousIconSrc" alt="Previous Question" />
       </button>
+      <button @click="handleFinishTest" :class="navigationButtonClass">Finish test</button>
       <button
         @click="handleNavigation('next')"
         :disabled="!canGoNext"
@@ -32,7 +35,7 @@ interface Props {
   questions: Question[];
 }
 
-const emit = defineEmits(["currentQuestionChange"]);
+const emit = defineEmits(["currentQuestionChange", "finishTest"]);
 
 const { questions } = defineProps<Props>();
 
@@ -51,6 +54,10 @@ const handleNavigation = (moveTo: "next" | "previous") => {
 
   position.value = newPosition;
   emit("currentQuestionChange", questions[newPosition]);
+};
+
+const handleFinishTest = () => {
+  emit("finishTest");
 };
 
 const handleKeyDown = (event: KeyboardEvent) => {
@@ -72,7 +79,7 @@ onUnmounted(() => {
 
 defineExpose({
   handleNavigation,
-  canGoNext
+  canGoNext,
 });
 
 const navigationButtonClass = `

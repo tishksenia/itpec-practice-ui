@@ -1,9 +1,9 @@
 <template>
   <div v-if="state === 'in_progress'">
-    <InProgress :questions="questions" @answer="handleAnswer" />
+    <InProgress :questions="questions" @finish-test="handleFinishTest" />
   </div>
   <div v-else>
-    <!-- Results -->
+    {{ JSON.stringify(results) }}
   </div>
 </template>
 
@@ -11,30 +11,21 @@
 import { ref } from "vue";
 import { Question } from "src/entities/Question";
 import InProgress from "./InProgress.vue";
-
-interface Result {
-  questionId: string;
-  isCorrect: boolean;
-}
+import { Result } from "./model";
 
 interface Props {
   questions: Question[];
 }
 
 const { questions } = defineProps<Props>();
-const state = ref<"in_progress" | "complete">('in_progress');
+const state = ref<"in_progress" | "complete">("in_progress");
 
 const results = ref<Result[]>([]);
 
-const handleAnswer = (result: Result) => {
-  const index = results.value.findIndex(r => result.questionId === r.questionId);
-  if(index === -1) {
-    results.value.push(result);
-  }
-  else {
-    results.value[index] = result;
-  }
-}
+const handleFinishTest = (finalResults: Result[]) => {
+  results.value = finalResults;
+  state.value = "complete";
+};
 </script>
 
 <style scoped></style>

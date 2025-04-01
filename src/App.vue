@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Test from "./widgets/TestSuite/TestSuite.vue";
+import TestSuite from "./widgets/TestSuite";
 
 const mockQuestions = [
     {
@@ -98,7 +98,7 @@ const mockQuestions = [
 </script>
 
 <template>
-  <Test :questions="mockQuestions" />
+  <TestSuite :questions="mockQuestions" />
 </template>
 
 <style scoped></style>
