@@ -10,7 +10,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
 import type { Question } from "./Question.js";
 import Answer from "../Answer/Answer.vue";
 

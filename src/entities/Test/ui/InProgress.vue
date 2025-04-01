@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import { Question } from "../../Question/Question";
 import QuestionCard from "../../Question/QuestionCard.vue";
 import Navigation from "./Navigation.vue";
@@ -35,9 +35,10 @@ const handleQuestionChange = (question: Question) => {
 
 const handleAnswer = (questionId: string, isCorrect: boolean) => {
   emit("answer", { questionId, isCorrect });
-  setTimeout(() => {
-    childRef.value.canGoNext && childRef.value.handleNavigation("next");
-  }, QUESTION_TRANSITION_DURATION);
+  setTimeout(
+    () => childRef.value.canGoNext && childRef.value.handleNavigation("next"),
+    QUESTION_TRANSITION_DURATION
+  );
 };
 </script>
 

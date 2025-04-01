@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import { Question } from "../Question/Question";
 import InProgress from "./ui/InProgress.vue";
 
