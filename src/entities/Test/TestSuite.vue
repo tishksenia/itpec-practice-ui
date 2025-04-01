@@ -1,6 +1,6 @@
 <template>
   <div v-if="state === 'in_progress'">
-    <InProgress :questions="questions" />
+    <InProgress :questions="questions" @answer="handleAnswer" />
   </div>
   <div v-else>
     <!-- Results -->
@@ -26,7 +26,15 @@ const state = ref<"in_progress" | "complete">('in_progress');
 
 const results = ref<Result[]>([]);
 
-const wrapper = ``;
+const handleAnswer = (result: Result) => {
+  const index = results.value.findIndex(r => result.questionId === r.questionId);
+  if(index === -1) {
+    results.value.push(result);
+  }
+  else {
+    results.value[index] = result;
+  }
+}
 </script>
 
 <style scoped></style>

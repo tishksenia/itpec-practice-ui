@@ -70,6 +70,11 @@ onUnmounted(() => {
   window.removeEventListener("keydown", handleKeyDown);
 });
 
+defineExpose({
+  handleNavigation,
+  canGoNext
+});
+
 const navigationButtonClass = `
   bg-sky-500 hover:bg-sky-200 hover:cursor-pointer
   disabled:bg-sky-200 disabled:cursor-not-allowed
