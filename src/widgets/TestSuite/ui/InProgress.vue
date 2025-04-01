@@ -16,11 +16,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Navigation from "./Navigation.vue";
-import QuestionCard, { Question }  from "../../../entities/Question";
+import QuestionCard, { Question } from "src/entities/Question";
 
 interface Props {
   questions: Question[];
 }
+
 const { questions } = defineProps<Props>();
 const selectedQuestion = ref<Question>(questions[0]);
 const childRef = ref(null);

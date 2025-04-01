@@ -4,6 +4,7 @@ import {
   defineConfigWithVueTs,
   vueTsConfigs,
 } from "@vue/eslint-config-typescript";
+import { globalIgnores } from "eslint/config";
 
 export default defineConfigWithVueTs(
   pluginVue.configs["flat/essential"],
@@ -12,5 +13,6 @@ export default defineConfigWithVueTs(
     rules: {
       "vue/multi-word-component-names": 0,
     },
-  }
+  },
+  globalIgnores(['**/**.d.ts'])
 );

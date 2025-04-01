@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from "vue";
-import { Question } from "../../../entities/Question";
+import { Question } from "src/entities/Question";
 import nextIconSrc from "./icons/nextIcon.svg";
 import previousIconSrc from "./icons/previousIcon.svg";
 

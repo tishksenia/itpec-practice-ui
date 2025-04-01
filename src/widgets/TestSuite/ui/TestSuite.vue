@@ -9,8 +9,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { Question } from "../../entities/Question";
-import InProgress from "./ui/InProgress.vue";
+import { Question } from "src/entities/Question";
+import InProgress from "./InProgress.vue";
 
 interface Result {
   questionId: string;

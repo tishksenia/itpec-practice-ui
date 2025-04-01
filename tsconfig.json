@@ -2,7 +2,13 @@
   "include": ["src"],
   "compilerOptions": {
     "types": ["vitest/globals"],
-    "lib": ["ES2015", "DOM"]
+    "lib": ["ES2015", "DOM"],
+    "baseUrl": "./",
+    "paths": {
+      "src/*": [
+        "./src/*"
+      ],
+    },
   },
   "typeRoots": ["./node_modules/@types/", "./types", "./node_modules/vite"]
 }
