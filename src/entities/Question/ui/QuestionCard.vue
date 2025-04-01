@@ -10,8 +10,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Question } from "./Question.js";
-import Answer from "../Answer/Answer.vue";
+import type { Question } from "../model";
+import Answer from "./AnswerButton.vue";
 
 interface Props {
   question: Question;

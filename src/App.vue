@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Test from "./entities/Test/TestSuite.vue";
+import Test from "./widgets/TestSuite/TestSuite.vue";
 
 const mockQuestions = [
     {

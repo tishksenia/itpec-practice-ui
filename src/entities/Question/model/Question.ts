@@ -1,4 +1,4 @@
-import type { Answer } from "../Answer/Answer";
+import type { Answer } from "./Answer";
 
 interface Question {
     id: string;

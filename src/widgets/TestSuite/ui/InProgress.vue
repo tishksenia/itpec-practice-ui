@@ -15,8 +15,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import QuestionCard, { Question } from "../../Question";
 import Navigation from "./Navigation.vue";
+import QuestionCard, { Question }  from "../../../entities/Question";
 
 interface Props {
   questions: Question[];

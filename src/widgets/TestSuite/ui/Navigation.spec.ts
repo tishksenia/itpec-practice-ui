@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import Navigation from "./Navigation.vue";
-import { Question } from "../../Question/Question";
+import { Question } from "../../../entities/Question";
 
 const mockQuestions: Question[] = [
   {

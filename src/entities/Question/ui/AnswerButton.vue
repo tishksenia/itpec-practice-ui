@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-    import type { Answer } from './Answer.ts';
+    import type { Answer } from '../model/Answer.js';
 
     interface Props {
         answer: Answer
